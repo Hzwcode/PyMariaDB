@@ -77,7 +77,8 @@ class mydb:
 		return result
 
 	def insert(self,args):
-		sql = "insert into publication(isbn,title,author,pdate,pcompany,pagenum,tags) values (%s,%s,%s,%s,%s,%s,%s);"
+		sql = "insert into publication(isbn,title,author,pdate,pcompany,pagenum,tags) \
+				values (%s,%s,%s,%s,%s,%s,%s);"
 		try:
 			with self._conn.cursor() as cur:
 				print len(args)

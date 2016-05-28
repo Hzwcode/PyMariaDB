@@ -26,12 +26,13 @@ class main(QtGui.QMainWindow):
 		MainWidget = QtGui.QWidget(self)
 		self.table = mytable.myTable(self)
 		add_but = QtGui.QPushButton("add")
-		del_but = QtGui.QPushButton("del")
+		del_but = QtGui.QPushButton("delete")
 		update_but = QtGui.QPushButton("update")
 		sear_but = QtGui.QPushButton(u"搜索")
 		senior_sear_but = QtGui.QPushButton(u"高级搜索")
 		self.searchEdit = QtGui.QLineEdit()
 		self.comboBox = QtGui.QComboBox()
+		self.check_lab = QtGui.QLabel(u"精确搜索")
 		self.checkBox = QtGui.QRadioButton()
 
 		self.comboBox.addItem(u"标题")
@@ -54,9 +55,10 @@ class main(QtGui.QMainWindow):
 
 		#layout
 		hbox1 = QtGui.QHBoxLayout()
-		hbox1.addWidget(self.checkBox)
 		hbox1.addWidget(self.comboBox)
 		hbox1.addWidget(self.searchEdit)
+		hbox1.addWidget(self.checkBox)
+		hbox1.addWidget(self.check_lab)
 		hbox1.addWidget(sear_but)
 		hbox1.addWidget(senior_sear_but)
 
@@ -128,7 +130,7 @@ class main(QtGui.QMainWindow):
 	def delEvent(self):
 		if self.table.selectedRow == -1:
 			return
-		ok = QtGui.QMessageBox.question(self, u"!!!!",u"确认删除",QtGui.QMessageBox.Yes,QtGui.QMessageBox.No)
+		ok = QtGui.QMessageBox.question(self, u"删除数据",u"确认删除",QtGui.QMessageBox.Yes,QtGui.QMessageBox.No)
 		if ok == QtGui.QMessageBox.Yes:
 			isbn = self.table.getSelectedISBN()
 			if self.db.delete(isbn):

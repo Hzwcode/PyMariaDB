@@ -22,12 +22,12 @@ class myTable(QtGui.QTableWidget):
 		header = [u"标题", u"作者",u"出版年",u"出版社",u"页数",u"标签",u"ISBN"]
 		self.setHorizontalHeaderLabels(header)
 
-		self.setColumnWidth(0, 260)
+		self.setColumnWidth(0, 240)
 		self.setColumnWidth(1, 200)
-		self.setColumnWidth(2, 100)
+		self.setColumnWidth(2, 80)
 		self.setColumnWidth(3, 180)
 		self.setColumnWidth(4, 80)
-		self.setColumnWidth(5, 320)
+		self.setColumnWidth(5, 360)
 		self.setColumnWidth(6, 150)
 
 		self.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)

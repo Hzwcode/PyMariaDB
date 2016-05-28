@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 import re
 import pydb
 
-path = "top250.xlsx"
+path = "book_top250.xlsx"
 
 wb = load_workbook(path)
 ws = wb.active
